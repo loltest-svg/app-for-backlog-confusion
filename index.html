@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Backlog Progress Tracker - An honest look at my academic backlogs">
+    <title>My Backlog Progress — Dad, Please Read 🙏</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Particle canvas background -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Floating orbs background -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-glow"></div>
+            <h1 class="title">
+                <span class="title-emoji">📚</span>
+                My Backlog Progress
+                <span class="title-emoji">📊</span>
+            </h1>
+            <p class="subtitle">Dad, here's everything — honestly and transparently</p>
+            <div class="stats-bar">
+                <div class="stat">
+                    <span class="stat-number" id="totalCount">12</span>
+                    <span class="stat-label">Total Backlogs</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" id="givenCount">4</span>
+                    <span class="stat-label">Already Giving</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" id="pendingCount">8</span>
+                    <span class="stat-label">Planned</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Important Message Button -->
+        <div class="important-btn-wrapper">
+            <button class="important-btn" id="importantBtn" onclick="openModal()">
+                <span class="important-pulse"></span>
+                <span class="important-icon">💛</span>
+                <span class="important-text">Click Here — Important Message for You, Dad</span>
+                <span class="important-icon">💛</span>
+            </button>
+        </div>
+
+        <!-- Mind Map Container -->
+        <div class="mindmap-container" id="mindmapContainer">
+            <svg class="connection-lines" id="connectionLines"></svg>
+            <div class="center-node" id="centerNode">
+                <span>🎯</span>
+                <span>12 Backlogs</span>
+            </div>
+            <div class="backlog-nodes" id="backlogNodes"></div>
+        </div>
+
+        <!-- Detail Panel (appears on hover/click) -->
+        <div class="detail-panel" id="detailPanel">
+            <div class="detail-header">
+                <span class="detail-emoji" id="detailEmoji"></span>
+                <h2 class="detail-title" id="detailTitle"></h2>
+                <span class="detail-status" id="detailStatus"></span>
+            </div>
+            <div class="detail-body">
+                <div class="detail-row" id="detailSemester"></div>
+                <div class="detail-row" id="detailCost"></div>
+                <div class="detail-row" id="detailTimeline"></div>
+                <div class="detail-row" id="detailNotes"></div>
+            </div>
+            <div class="detail-progress" id="detailProgress"></div>
+        </div>
+
+        <!-- Backlog List (fallback / mobile) -->
+        <div class="backlog-list" id="backlogList"></div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with ❤️ and honesty</p>
+        </footer>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+        <div class="modal" id="modal">
+            <button class="modal-close" onclick="closeModal(event, true)">✕</button>
+            <div class="modal-content">
+                <div class="modal-emoji-top">🙏💛</div>
+                <h2 class="modal-title">Dad, I need to be honest with you</h2>
+                <div class="modal-text">
+                    <p>When you mentioned that I had already started clearing my backlogs, I was taken aback for a moment — not because I was hiding anything, but because the truth is, <strong>I've only cleared one exam so far</strong>.</p>
+                    <p>I still have all of these remaining, and I know that's a lot. For some of them, I couldn't register in time or found the online format genuinely too difficult. I'm not making excuses — I wanted to lay it all out for you so you can see exactly where I stand.</p>
+                    <p>I'll admit, I was scared to tell you all of this because I didn't want to disappoint you or get scolded. But I realized that <strong>you're the only person I can turn to</strong>, and you deserve the full truth.</p>
+                    <p>I'm not manipulating you, Dad. I'm just trying to figure this out, and I need your support. 💪</p>
+                </div>
+                <div class="modal-emoji-bottom">❤️🫂</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
