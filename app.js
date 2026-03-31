@@ -151,13 +151,13 @@ const backlogs = [
         name: "DSA",
         emoji: "🧩",
         semester: "Semester 2",
-        status: "registered",
-        statusLabel: "Registered",
+        status: "pending",
+        statusLabel: "Not Registered",
         cost: "₹800",
-        timeline: "Upcoming",
-        notes: "Actual back exam from Sem 2. Registered for ₹800.",
-        progress: 30,
-        color: "#8b5cf6"
+        timeline: "Need to register",
+        notes: "Actual back exam from Sem 2. Costs ₹800 — not registered yet.",
+        progress: 10,
+        color: "#f59e0b"
     }
 ];
 
